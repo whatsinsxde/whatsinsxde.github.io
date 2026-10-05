@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Portfolio</title>
+
+  <meta name="description" content="insajd | student zafascynowany pentestingiem: purple team z akcentem na red team, maldev i sieci. Portfolio i kontakt.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="insajd | student, pentesting &amp; purple team">
+  <meta property="og:description" content="Student zafascynowany pentestingiem: purple team, red team, maldev i sieci.">
+
+  <meta name="theme-color" content="#0F0D0A">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/early.js"></script>
+</head>
+<body>
+  <a class="skip" href="#about">Przejdź do treści / Skip to content</a>
+
+  <div id="boot" aria-hidden="true"><pre id="boot-log"></pre></div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Home"><span class="brand-sigil">$</span> <span id="brand-nick">nick</span><span class="brand-cursor">_</span></a>
+      <nav class="nav-links" id="nav-links" aria-label="Menu"></nav>
+      <div class="nav-right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-set-lang="pl">PL</button><span class="lang-sep">/</span><button type="button" data-set-lang="en">EN</button>
+        </div>
+        <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="br">[</span> menu <span class="br">]</span>
+        </button>
+      </div>
+    </div>
+    <div class="progress" id="progress"></div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden></div>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="wrap hero-inner" id="hero-inner">
+        <p class="hero-prompt reveal-hero" style="--d:0"><span class="acc">~$</span> ./intro.sh</p>
+        <h1 class="ascii-wrap">
+          <span class="sr-only" id="sr-name"></span>
+          <div class="ascii" id="ascii" aria-hidden="true"></div>
+        </h1>
+        <p class="hero-role reveal-hero" style="--d:1"><span class="acc">&gt;</span> <span id="typed"></span><span class="cursor" aria-hidden="true"></span></p>
+        <p class="hero-tagline reveal-hero" style="--d:2" id="tagline"></p>
+        <div class="hero-cta reveal-hero" style="--d:3" id="hero-cta"></div>
+        <p class="hero-status reveal-hero" style="--d:4" id="hero-status"></p>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Scroll"><span>scroll</span><i></i></a>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="sec-head" data-sec="about"></div>
+        <div class="about-grid">
+          <div class="about-text" id="about-text"></div>
+          <div class="term reveal" id="terminal">
+            <div class="term-bar">
+              <span class="term-dots"><i></i><i></i><i></i></span>
+              <span class="term-title" id="term-title">nick@portfolio: ~</span>
+            </div>
+            <div class="term-body" id="term-body">
+              <div id="term-out"></div>
+              <label class="term-input-line" id="term-input-line">
+                <span class="term-prompt" id="term-prompt"></span>
+                <input id="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="stats" id="stats"></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="sec-head" data-sec="skills"></div>
+        <div class="skills-grid" id="skills-grid"></div>
+        <div class="tools reveal" id="tools"></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="sec-head" data-sec="projects"></div>
+        <div class="projects-grid" id="projects-grid"></div>
+        <div class="projects-more" id="projects-more"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="sec-head" data-sec="contact"></div>
+        <div class="contact-grid">
+          <div class="contact-intro reveal" id="contact-intro"></div>
+          <div class="contact-table reveal" style="--i:1" id="contact-table"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner" id="footer"></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">Ta strona potrzebuje JavaScriptu. / This site requires JavaScript.</div>
+  </noscript>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/font.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

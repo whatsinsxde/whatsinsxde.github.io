@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-5bEA9ju1n8DPsm2U6MqnOJUL9QaNSqoQr8oyGFDTB54='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>404 not found</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0F0D0A">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E %3Crect width='64' height='64' rx='12' fill='%230F0D0A'/%3E %3Crect x='1.5' y='1.5' width='61' height='61' rx='10.5' fill='none' stroke='%23272119' stroke-width='3'/%3E %3Cpath d='M16 22 L28 32 L16 42' fill='none' stroke='%23FFB224' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E %3Crect x='32' y='40' width='16' height='5' rx='1.5' fill='%23FFB224'/%3E %3C/svg%3E" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+  <style>
+    :root { --bg:#0F0D0A; --ink:#EDE6DA; --muted:#A39887; --dim:#6F6556; --accent:#FFB224; --err:#FF5A4E; --rule:#272119; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; display: grid; place-items: center;
+      background: var(--bg); color: var(--muted);
+      font: 400 .875rem/1.7 "JetBrains Mono", ui-monospace, Menlo, monospace;
+      padding: 16px;
+    }
+    .box { width: 100%; max-width: 560px; border: 1px solid var(--rule); border-radius: 6px; background: #0B0907; overflow: hidden; }
+    .bar { padding: .6rem .9rem; border-bottom: 1px solid var(--rule); background: #16130F; color: var(--dim); font-size: .75rem; }
+    .body { padding: 1.2rem 1.2rem 1.4rem; }
+    .big { font-size: clamp(3rem, 12vw, 5rem); line-height: 1; color: var(--accent); text-shadow: 0 0 18px rgba(255,178,36,.32); margin: .2rem 0 1rem; }
+    .acc { color: var(--accent); } .err { color: var(--err); } .cmd { color: var(--ink); }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px dashed currentColor; }
+    .cursor { display: inline-block; width: .6em; height: 1.1em; vertical-align: text-bottom; background: var(--accent); animation: b 1s steps(1) infinite; }
+    @keyframes b { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="bar">bash: 404</div>
+    <div class="body">
+      <div><span class="acc">~$</span> <span class="cmd">cd ./ta-strona</span></div>
+      <div class="err">bash: cd: no such file or directory</div>
+      <div class="big">404</div>
+      <div>Ta strona nie istnieje. / This page does not exist.</div>
+      <div style="margin-top:1rem"><span class="acc">~$</span> <a id="home" href="/" data-base="">cd ~</a> <span class="cursor"></span></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var a = document.getElementById('home');
+      var base = a.getAttribute('data-base');
+      var seg = location.pathname.split('/')[1];
+      if (base) a.href = base;
+      else if (/\.github\.io$/.test(location.hostname) && seg) a.href = '/' + seg + '/';
+    })();
+  </script>
+</body>
+</html>
