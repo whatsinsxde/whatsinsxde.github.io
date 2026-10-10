@@ -73,8 +73,8 @@ window.SITE_CONFIG = {
       group: { pl: "programowanie", en: "programming" },
       items: [
         { name: "Python",     level: 80 },
-        { name: "JavaScript", level: 60 },
-        { name: "C++",        level: 60 },
+        { name: "Bash",       level: 80 },
+        { name: "PowerShell", level: 80 },
       ],
     },
     {
